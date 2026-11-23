@@ -2,7 +2,7 @@
  * 顶部导航条（shell.overlay）+ 主页面板（main key='mindmap'）。
  */
 window.__ModuleLoader__.load({
-  id: '@local/dsh-workspace-mindmap',
+  id: 'dsh-workspace-mindmap',
   factory(require) {
     const React = require('react');
     const h = React.createElement;
