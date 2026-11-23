@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Workspace mind map">
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#0f172a"/>
+  <rect x="10" y="27" width="14" height="10" rx="3" fill="#f8fafc"/>
+  <path d="M24 32h8M32 32V14h6M32 32v18h6" fill="none" stroke="#93c5fd" stroke-width="2.4" stroke-linecap="round"/>
+  <rect x="38" y="9" width="16" height="10" rx="3" fill="#38bdf8"/>
+  <rect x="38" y="27" width="16" height="10" rx="3" fill="#7c3aed"/>
+  <rect x="38" y="45" width="16" height="10" rx="3" fill="#059669"/>
+</svg>

@@ -1,0 +1,3 @@
+- insert:
+    - id: workspace-mindmap
+      name: '@local/dsh-workspace-mindmap'

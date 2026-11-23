@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Workspace mind map",
+    "description": "Moves the sidebar entries (new session, workspaces, plugins, schedules) into a top navigation bar and turns the main page into a mind map grouped by app.",
+    "detail": "docs/DETAIL.md"
+  }
+}
