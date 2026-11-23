@@ -1,6 +1,6 @@
 {
   "name": "dsh-workspace-mindmap",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "把工作区历史记录做成思维导图主页面，并把左侧栏入口收进顶部导航条。",
   "type": "module",
   "license": "MIT",

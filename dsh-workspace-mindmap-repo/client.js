@@ -329,6 +329,8 @@ window.__ModuleLoader__.load({
       const sceneRef = useRef(null);
       const [cam, setCam] = useState({ k: 1, x: 0, y: 0 });
       const [entries, setEntries] = useState([]);
+      /* 记住"当前展开的是哪个应用"：点叶子只换详情，不改展开状态、不动镜头 */
+      const appFocusRef = useRef(null);
 
       /* 会话列表 → 导图条目：工作区里每个会话都在，新建的也立刻出现 */
       useEffect(() => {
@@ -370,7 +372,7 @@ window.__ModuleLoader__.load({
         };
       }, []);
 
-      const focusId = sel && sel.kind === 'app' ? sel.id : null;
+      const focusId = (sel && sel.kind === 'app' && sel.id) || appFocusRef.current || null;
       const model = useMemo(() => build(entries.length ? entries : FALLBACK, focusId), [entries, focusId]);
       const layoutRef = useRef(model);
       layoutRef.current = model;
@@ -401,18 +403,28 @@ window.__ModuleLoader__.load({
         setCam({ k, x: -L.appX * k + 24, y: hgt / 2 - cy * k });
       }, []);
 
+      /* 镜头：只有"展开的应用"变了（或它展开后的高度变了）才推近；
+         点叶子、刷新会话列表、只是选中某一条，都不动镜头 */
       useEffect(() => {
-        const row = focusId ? model.rows.find((r) => r.app.id === focusId) : null;
-        const raf = requestAnimationFrame(() => { if (row) focusApp(row); else fit(); });
+        if (!focusId) return undefined;
+        const row = model.rows.find((r) => r.app.id === focusId);
+        const raf = requestAnimationFrame(() => { if (row) focusApp(row); });
+        return () => cancelAnimationFrame(raf);
+      }, [model, focusId, focusApp]);
+
+      /* 首次拿到数据 / 窗口改尺寸时对准全览 */
+      useEffect(() => {
+        const raf = requestAnimationFrame(() => fit());
         const onResize = () => fit();
         window.addEventListener('resize', onResize);
         return () => { cancelAnimationFrame(raf); window.removeEventListener('resize', onResize); };
-      }, [model, focusId, fit, focusApp]);
+      }, [entries.length > 0, fit]);
 
-      const goOverview = useCallback(() => { setSel(null); fit(); }, [fit]);
+      const goOverview = useCallback(() => { appFocusRef.current = null; setSel(null); fit(); }, [fit]);
 
       const onApp = (row) => (e) => {
         e.stopPropagation();
+        appFocusRef.current = row.app.id;
         setSel({ kind: 'app', id: row.app.id });
       };
 
@@ -480,7 +492,7 @@ window.__ModuleLoader__.load({
               key: 'more-' + app.id + g.kind,
               className: 'dsh-mm-more',
               style: { left: L.leafX, top: g.topAbs + 18 + g.items.length * (L.leafH + L.leafGap) },
-              onClick: (e) => { e.stopPropagation(); setSel({ kind: 'app', id: app.id }); },
+              onClick: (e) => { e.stopPropagation(); appFocusRef.current = app.id; setSel({ kind: 'app', id: app.id }); },
             }, '… 还有 ' + g.more + ' 条（点开看全部）'));
           }
         });
