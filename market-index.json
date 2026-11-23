@@ -1,0 +1,66 @@
+{
+  "format": 1,
+  "title": {
+    "en": "DSH tooling by 29540",
+    "zh": "29540 的 DSH 工具索引"
+  },
+  "description": {
+    "en": "A small index of DeepSeek Harness bundles maintained by this installation.",
+    "zh": "本机维护的小型 DeepSeek Harness 插件索引，目前收录工作区思维导图。"
+  },
+  "metadata": {
+    "categories": {
+      "workspace": {
+        "title": {
+          "en": "Workspace",
+          "zh": "工作区"
+        }
+      }
+    },
+    "labels": {},
+    "sortKeys": {}
+  },
+  "plugins": [
+    {
+      "name": "dsh-workspace-mindmap",
+      "title": {
+        "en": "Workspace Mind Map",
+        "zh": "工作区思维导图"
+      },
+      "description": {
+        "en": "Turns workspace history into a mind map home page and moves the sidebar entries into a top navigation bar.",
+        "zh": "把工作区历史记录做成思维导图主页面，并把左侧栏入口收进顶部导航条。"
+      },
+      "icon": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IldvcmtzcGFjZSBtaW5kIG1hcCI+CiAgPHJlY3QgeD0iMiIgeT0iMiIgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMTQiIGZpbGw9IiMwZjE3MmEiLz4KICA8cmVjdCB4PSIxMCIgeT0iMjciIHdpZHRoPSIxNCIgaGVpZ2h0PSIxMCIgcng9IjMiIGZpbGw9IiNmOGZhZmMiLz4KICA8cGF0aCBkPSJNMjQgMzJoOE0zMiAzMlYxNGg2TTMyIDMydjE4aDYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzkzYzVmZCIgc3Ryb2tlLXdpZHRoPSIyLjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDxyZWN0IHg9IjM4IiB5PSI5IiB3aWR0aD0iMTYiIGhlaWdodD0iMTAiIHJ4PSIzIiBmaWxsPSIjMzhiZGY4Ii8+CiAgPHJlY3QgeD0iMzgiIHk9IjI3IiB3aWR0aD0iMTYiIGhlaWdodD0iMTAiIHJ4PSIzIiBmaWxsPSIjN2MzYWVkIi8+CiAgPHJlY3QgeD0iMzgiIHk9IjQ1IiB3aWR0aD0iMTYiIGhlaWdodD0iMTAiIHJ4PSIzIiBmaWxsPSIjMDU5NjY5Ii8+Cjwvc3ZnPgo=",
+      "repository": {
+        "url": "https://github.com/nieyongqi5-oss/dsh-workspace-mindmap",
+        "directory": "dsh-workspace-mindmap-repo"
+      },
+      "metadata": {
+        "category": "workspace",
+        "keywords": [
+          "mindmap",
+          "workspace",
+          "思维导图",
+          "工作区",
+          "导航条"
+        ],
+        "labels": [],
+        "sortKeys": {}
+      },
+      "versions": [
+        {
+          "version": "0.1.0",
+          "publishTimestamp": 1795424716,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/nieyongqi5-oss/dsh-workspace-mindmap",
+            "commit": "ce7c23058a97e8c20e60820ef2aa25e2b037d655",
+            "path": "dsh-workspace-mindmap-repo"
+          },
+          "engines": {}
+        }
+      ]
+    }
+  ]
+}
